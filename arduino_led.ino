@@ -22,8 +22,8 @@ void loop() {
   else{
     state = command;
   }
-  if (state == 1){          //added to convert remote command to HIGH or LOW
-    state = HIGH;           //for turning the LED on or off
+  if (state == 1){          
+    state = HIGH;           
   }                         
   else{
     state = LOW;
