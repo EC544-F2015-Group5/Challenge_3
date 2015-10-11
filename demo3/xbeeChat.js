@@ -14,7 +14,7 @@ var sp;
 sp = new SerialPort.SerialPort(portName, portConfig);
 
 app.get('/', function(req, res){
-  res.sendfile('index.html');
+  res.sendfile('LED_Blink.html');
 });
 
 io.on('connection', function(socket){
@@ -22,7 +22,7 @@ io.on('connection', function(socket){
   socket.on('disconnect', function(){
   });
   socket.on('chat message', function(msg){
-    io.emit('chat message', msg);
+    // io.emit('chat message', msg);
     sp.write(msg + "\n");
   });
 });
@@ -35,7 +35,7 @@ sp.on("open", function () {
   console.log('open');
   sp.on('data', function(data) {
     console.log('data received: ' + data);
-    io.emit("chat message", "An XBee says: " + data);
+    io.emit("chat message", "Status: " + data);
   });
 });
 
