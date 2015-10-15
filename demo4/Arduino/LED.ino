@@ -15,6 +15,7 @@ void setup() {
   pinMode(LED2, OUTPUT);
   pinMode(LED3, OUTPUT);
   pinMode(LED4, OUTPUT);
+//inilitialization
   digitalWrite(LED1, LOW);
   digitalWrite(LED2, LOW);
   digitalWrite(LED3, LOW);
@@ -24,9 +25,7 @@ void setup() {
 void loop() {
   while(XBee.available()){
     buffer = XBee.read();
-//  while(Serial.available()){
-//    digitalWrite(LED1, LOW);
-//    buffer = Serial.read();
+    delay(2);
     if (buffer == '1'){
       digitalWrite(LED1, HIGH);
       XBee.println("LED1 is on");
