@@ -26,7 +26,7 @@ void loop() {
   while(XBee.available()){
     buffer = XBee.read();
     //delay time for serialport to read data
-    delay(1500);
+    delay(3);
     if (buffer == '1'){
       digitalWrite(LED1, HIGH);
       XBee.println("LED1 is on");
